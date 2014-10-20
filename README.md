@@ -11,6 +11,7 @@ sudo pip install tornadoauthcn
 ========
 * 微博
 * QQ
+
 欢迎pull request更多网站支持 :)
 
 使用
