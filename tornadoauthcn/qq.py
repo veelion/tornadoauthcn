@@ -85,6 +85,9 @@ class QQOAuth2Mixin(OAuth2Mixin):
             return
 
         print 'response:', response.body
+        if 'error' in response.body:
+            future.set_exception(AuthError('QQ auth access_token error: %s' % str(response.body)))
+            return
         args = escape.native_str(response.body).split('&')
         access_token = ''
         for a in args:
